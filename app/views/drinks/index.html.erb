@@ -1,0 +1,28 @@
+<h1>Drinks Database</h1>
+
+<div>
+    <%= link_to "Create New Drink Here", new_drink_path %>
+</div>
+
+<% @drinks.each do |drink| %>
+    <table>
+        <tr>
+            <td> <strong>Drink</strong> </td>
+            <td><%= drink.brand %></td>
+        </tr>
+        <tr>
+            <td> <strong>Quantity</strong> </td>
+            <td><%= drink.quantity %> L</td>
+        </tr>
+        <tr>
+            <td> <strong>Description</strong> </td>
+            <td><%= drink.description %></td>
+        </tr>
+    </table>
+    <div>
+        <%= link_to "EDIT", edit_drink_path(drink) %> | <%= link_to "DELETE", drink_path(drink), data: {
+            turbo_method: "DELETE",
+            turbo_confirm: "ARE YOU SURE?!"
+        } %>
+    </div>
+<% end %>

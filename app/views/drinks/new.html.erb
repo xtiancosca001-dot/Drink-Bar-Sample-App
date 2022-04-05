@@ -1,0 +1,21 @@
+<h1>New Drink</h1>
+
+<%= form_with model: @drink do |drink| %>
+    <table>
+        <tr>
+            <td><%= drink.label :brand %></td>
+            <td><%= drink.text_field :brand %></td>
+        </tr>
+        <tr>
+            <td><%= drink.label :quantity %></td>
+            <td><%= drink.text_field :quantity %></td>
+        </tr>
+        <tr>
+            <td><%= drink.label :description %></td>
+            <td><%= drink.text_area :description %></td>
+        </tr>
+    </table>
+    <div>
+        <%= drink.submit %>
+    </div>
+<% end %>
